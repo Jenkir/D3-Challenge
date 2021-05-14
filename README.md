@@ -14,7 +14,7 @@ I included state abbreviations in the circles, created and situated axes and lab
 
 (Note: You'll need to use python -m http.server to run the visualization. This will host the page at localhost:8000 in your web browser.)
 
-For the second part of the assignment, I will do the following:
+For the second (bonus) part of the assignment, I will do the following:
 
 
 1. More Data, More Dynamics
