@@ -24,7 +24,7 @@ const svg = d3
 const chartGroup = svg.append("g")
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-// ==========Import and format the data to numerical values =======================
+// Import and format the data to numerical values 
 d3.csv("assets/data/data.csv").then(function(CensusData) {
   CensusData.forEach(function(data) {
     data.age = +data.age;
@@ -32,7 +32,7 @@ d3.csv("assets/data/data.csv").then(function(CensusData) {
     //console.log(data);
   });
 
-  // ==============Create Scales====================
+  // Create Scales
   const xScale = d3.scaleLinear()
     .domain(d3.extent(CensusData, d => d.age))
     .range([0, width])
@@ -43,16 +43,16 @@ d3.csv("assets/data/data.csv").then(function(CensusData) {
     .range([height, 0])
     .nice();
   
-  // =============Create Axes=========================
+  // Create Axes
   const xAxis = d3.axisBottom(xScale);
   const yAxis = d3.axisLeft(yScale);
 
 
-  // ============Append axes to the chartGroup==========
+  // Append axes to chartGroup
   chartGroup.append("g").attr("transform", `translate(0, ${height})`).call(xAxis);
   chartGroup.append("g").call(yAxis);
 
-  //============Generate scatter plot=========
+  //Generate scatter plot
   chartGroup.selectAll("circle")
     .data(CensusData)
     .enter()
@@ -64,7 +64,7 @@ d3.csv("assets/data/data.csv").then(function(CensusData) {
     .classed("stateCircle", true)
     .attr("opacity", 0.75);
 
-//============add texts to each datapoint=========
+//Add text to each datapoint
 chartGroup.append("g")
   .selectAll('text')
   .data(CensusData)
@@ -81,7 +81,7 @@ chartGroup.append("g")
   .style("font-weight", "bold")
   .attr("alignment-baseline", "central");
   
-  //============add axes titles=========
+  //Add axes titles
   chartGroup.append("text")
         .attr("transform", `translate(${width / 2}, ${height + margin.top + 13})`)
         .attr("text-anchor", "middle")
