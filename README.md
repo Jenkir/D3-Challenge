@@ -10,5 +10,6 @@ I analyzed data for two of the variables, percentage of smokers vs. median age.
 Using D3 techniques, I created a scatter plot that represents each state with circle elements. I pulled in the data from data.csv by using the d3.csv function. 
 I included state abbreviations in the circles, created and situated axes and labels to the left and bottom of the chart.
 
+![scattertemp](https://user-images.githubusercontent.com/75215001/131890911-524a7cac-abdd-4b07-a36b-6348b83730e2.png)
 
 
